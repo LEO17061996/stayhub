@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
     "seed": "npx tsx prisma/seed.ts",
     "db:push": "npx prisma db push",
-    "db:reset": "npx prisma db push --force-reset && npm run seed"
+    "db:reset": "npx prisma db push --force-reset && npm run seed",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
